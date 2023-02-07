@@ -86,4 +86,60 @@ $(document).ready(function() {
             })
           });
   
-        })
+  $(document).ready(function() {
+  // check if city is saved
+      if (localStorage.getItem("city")) {
+  // get city from local storage
+        var city = localStorage.getItem("city");
+  // search for saved city
+        $("#search-input").val(city);
+        $("#search-form").submit();
+      }
+    });
+  
+  // search history click event
+  function handleHistoryClick(event) {
+      var city = $(event.target).text();
+      var apiKey = "bf50e52814990375acd6fc88460c1de0";
+      var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
+    
+  // ajax to get lat and lon apiUrl
+      $.ajax({
+        url: apiUrl,
+        method: "GET"
+      }).then(function(response) {
+        var lat = response.city.coord.lat;
+        var lon = response.city.coord.lon;
+        var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+    
+        $.ajax({
+          url: apiUrl,
+          method: "GET"
+        }).then(function(response2) {
+          console.log(response2)
+  // add current data to page
+          $("#today").html("<h2>" + response2.city + ", " + response2.country + "</h2><p>Temperature: " + response2.temperature + "</p><p>Humidity: " + response2.humidity + "</p><p>Wind Speed: " + response2.windSpeed + "</p><p>Date: " + response2.date + "</p>");
+          
+  // add 5 day data to page
+          for (var i = 0; i < 5; i++) {
+            $("#card1" + (i + 1)).html("<h2>" + forecastDate + "</h2><p>Temperature: " + forecastTemperature + "</p><p>Humidity: " + forecastHumidity + "</p><p>Wind Speed: " + forecastWindSpeed + "</p>");
+          }
+        });
+      });
+    }
+    
+  function displayHistory(){
+  // save searches
+  var history = JSON.parse(localStorage.getItem("cities")) || []
+  localStorage.setItem("cities", JSON.stringify(history))
+  $("#history").empty()
+  for (var i = 0; i < history.length; i++){
+    var city = $("<li></li>")
+    city.text(history[i])
+    $("#history").append(city)
+  }
+  }
+  displayHistory()
+  // search history event listener
+    $("#search-history").on("click", "li", handleHistoryClick);
+  })
