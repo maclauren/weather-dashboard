@@ -45,3 +45,7 @@ The following image shows the web application's appearance and functionality:
 
 ![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for London.](./assets/10-server-side-apis-challenge-demo.png)
 
+## Method
+
+1. Mark up HTML and create CSS and Javascript files
+2. Add Ajax functionality to JS file to fetch data from the API

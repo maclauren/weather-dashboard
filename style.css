@@ -1,0 +1,82 @@
+/* CSS for search and current weather sections */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+}
+
+#search-form {
+    margin: 50px auto;
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#today {
+    margin: 50px auto;
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+#today h2 {
+    font-size: 24px;
+    color: blue;
+    margin-bottom: 20px;
+}
+
+#today p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* CSS for 5 day forecast cards */
+
+.card {
+    background-color: #add8e6;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 15px;
+    margin-right: 15px;
+    box-shadow: 2px 2px 5px #888888;
+  }
+  
+  .card-title {
+    font-weight: bold;
+    color: #2b2d42;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .card-text {
+    text-align: center;
+    color: #2b2d42;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  

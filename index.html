@@ -34,7 +34,7 @@
         <form id="search-form" class="form">
           <div class="form-inline form-group">
             <div class="input-group">
-              <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
+              <input class="form-input weather-search" type="text" id="search-input" placeholder="e.g. London"
                 aria-labelledby="form-heading" aria-controls="today forecast" />
               <div class="input-group-append">
                 <button type="submit" class="btn search-button" id="search-button" aria-label="submit search">
@@ -50,7 +50,71 @@
 
       <div class="col-lg-9 pb-3">
         <section id="today" class="mt-3" role="region" aria-live="polite"></section>
-        <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
+        <section id="forecast" class="row mt-3" role="region" aria-live="polite">
+
+<!-- 5 Day Weather Forecast Cards -->
+
+          <div class="container my-5">
+            <h2 class="text-center">5-Day Weather Forecast</h2>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="card" id="card0">
+                  <div class="card-body">
+                    <h5 class="card-title" id="card0-title"></h5>
+                    <p class="card-text" id="card0-date"></p>
+                    <p class="card-text" id="card0-temp"></p>
+                    <p class="card-text" id="card0-humidity"></p>
+                    <p class="card-text" id="card0-wind"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="card" id="card1">
+                  <div class="card-body">
+                    <h5 class="card-title" id="card1-title"></h5>
+                    <p class="card-text" id="card1-date"></p>
+                    <p class="card-text" id="card1-temp"></p>
+                    <p class="card-text" id="card1-humidity"></p>
+                    <p class="card-text" id="card1-wind"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="card" id="card2">
+                  <div class="card-body">
+                    <h5 class="card-title" id="card2-title"></h5>
+                    <p class="card-text" id="card2-date"></p>
+                    <p class="card-text" id="card2-temp"></p>
+                    <p class="card-text" id="card2-humidity"></p>
+                    <p class="card-text" id="card2-wind"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="card" id="card3">
+                  <div class="card-body">
+                    <h5 class="card-title" id="card3-title"></h5>
+                    <p class="card-text" id="card3-date"></p>
+                    <p class="card-text" id="card3-temp"></p>
+                    <p class="card-text" id="card3-humidity"></p>
+                    <p class="card-text" id="card3-wind"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="card" id="card4">
+                  <div class="card-body">
+                    <h5 class="card-title" id="card4-title"></h5>
+                    <p class="card-text" id="card4-date"></p>
+                    <p class="card-text" id="card4-temp"></p>
+                    <p class="card-text" id="card4-humidity"></p>
+                    <p class="card-text" id="card4-wind"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>          
+        </section>
       </div>
     </div>
   </div>
