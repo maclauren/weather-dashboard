@@ -20,4 +20,21 @@ $(document).ready(function() {
           var lat = response.city.coord.lat;
           var lon = response.city.coord.lon;
           var newApiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
-      })})})
+  
+  
+  // TODO: Create an object with city lat long, save to local storage if a response comes back
+  
+  
+  // new ajax to fetch newApiUrl data to add city, country, temperature
+          $.ajax({
+              url: newApiUrl,
+              method: "GET",
+              success: function(data) {
+                  var city = data.city.name;
+                  var country = data.city.country;
+                  var temperature = data.list[0].main.temp;
+                  var humidity = data.list[0].main.humidity;
+                  var windSpeed = data.list[0].wind.speed;
+                  var date = moment(data.list[0].dt_txt).format('dddd, MMMM Do YYYY, h:mm:ss a');
+  
+              }})})})})
