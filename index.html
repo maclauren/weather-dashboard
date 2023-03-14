@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -20,27 +22,27 @@
 </head>
 
 <body>
-  <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
+  <header class="container-fluid text-center text-white weather-header">
     <h1>Weather Dashboard</h1>
   </header>
 
   <!-- max-width for ultra wide resolutions -->
-  <div class="container-fluid" style="max-width: 1400px">
+  <div class="container-fluid page-container" style="max-width: 1400px">
     <div class="row">
       <aside class="col-lg-3 pb-3">
-        <h2 id="form-heading" class="mt-1 h3 form-label">
-          Search for a City:
-        </h2>
-        <form id="search-form" class="form">
-          <div class="form-inline form-group">
+        <form id="search-form" class="form theme-card">
+          <h2 id="form-heading" class="mt-1 h3 form-label">
+            Search for a City
+          </h2>
+          <div class="form-inline">
             <div class="input-group">
               <input class="form-input weather-search" type="text" id="search-input" placeholder="e.g. London"
                 aria-labelledby="form-heading" aria-controls="today forecast" />
+              
               <div class="input-group-append">
                 <button type="submit" class="btn search-button" id="search-button" aria-label="submit search">
-                  Search
+                  <i class="fas fa-search"></i> Search
                 </button>
-                <hr class="hr weather-hr" />
               </div>
             </div>
           </div>
@@ -49,63 +51,65 @@
       </aside>
 
       <div class="col-lg-9 pb-3">
-        <section id="today" class="mt-3" role="region" aria-live="polite"></section>
+        <section id="today" class="theme-card" role="region" aria-live="polite">
+          <div id="todayPlaceholder">Look up a city to view weather information!</div>
+        </section>
         <section id="forecast" class="row mt-3" role="region" aria-live="polite">
 
 <!-- 5 Day Weather Forecast Cards -->
 
-          <div class="container my-5">
+          <div class="container">
             <h2 class="text-center">5-Day Weather Forecast</h2>
             <div class="row">
-              <div class="col-md-2">
-                <div class="card" id="card0">
+              <div class="col">
+                <div class="theme-card forecast-5d-card" id="card0">
                   <div class="card-body">
-                    <h5 class="card-title" id="card0-title"></h5>
                     <p class="card-text" id="card0-date"></p>
+                    <img class="weather-icon" id="card0-icon"></p>
                     <p class="card-text" id="card0-temp"></p>
                     <p class="card-text" id="card0-humidity"></p>
                     <p class="card-text" id="card0-wind"></p>
                   </div>
                 </div>
               </div>
-              <div class="col-md-2">
-                <div class="card" id="card1">
+              <div class="col">
+                <div class="theme-card forecast-5d-card" id="card1">
                   <div class="card-body">
-                    <h5 class="card-title" id="card1-title"></h5>
                     <p class="card-text" id="card1-date"></p>
+                    <img class="weather-icon" id="card1-icon"></p>
                     <p class="card-text" id="card1-temp"></p>
                     <p class="card-text" id="card1-humidity"></p>
                     <p class="card-text" id="card1-wind"></p>
                   </div>
                 </div>
               </div>
-              <div class="col-md-2">
-                <div class="card" id="card2">
+              <div class="col">
+                <div class="theme-card forecast-5d-card" id="card2">
                   <div class="card-body">
-                    <h5 class="card-title" id="card2-title"></h5>
                     <p class="card-text" id="card2-date"></p>
+                    <img class="weather-icon" id="card2-icon"></p>
                     <p class="card-text" id="card2-temp"></p>
                     <p class="card-text" id="card2-humidity"></p>
                     <p class="card-text" id="card2-wind"></p>
                   </div>
                 </div>
               </div>
-              <div class="col-md-2">
-                <div class="card" id="card3">
+              <div class="col">
+                <div class="theme-card forecast-5d-card" id="card3">
                   <div class="card-body">
-                    <h5 class="card-title" id="card3-title"></h5>
                     <p class="card-text" id="card3-date"></p>
+                    <img class="weather-icon" id="card3-icon"></p>
                     <p class="card-text" id="card3-temp"></p>
                     <p class="card-text" id="card3-humidity"></p>
                     <p class="card-text" id="card3-wind"></p>
                   </div>
                 </div>
               </div>
-              <div class="col-md-2">
-                <div class="card" id="card4">
+              <div class="col">
+                <div class="theme-card forecast-5d-card" id="card4">
                   <div class="card-body">
-                    <h5 class="card-title" id="card4-title"></h5>
                     <p class="card-text" id="card4-date"></p>
+                    <img class="weather-icon" id="card4-icon"></p>
                     <p class="card-text" id="card4-temp"></p>
                     <p class="card-text" id="card4-humidity"></p>
                     <p class="card-text" id="card4-wind"></p>
